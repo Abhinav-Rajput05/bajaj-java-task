@@ -15,6 +15,11 @@ public class bajajController {
         this.bajajService = bajajService;
     }
 
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("OK");
+    }
+
     @PostMapping("/bfhl")
     public ResponseEntity<bajajResponse> handleBajajRequest(@RequestBody bajajRequest request) {
         bajajResponse response = bajajService.processData(request);
